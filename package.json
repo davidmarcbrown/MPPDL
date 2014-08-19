@@ -1,0 +1,10 @@
+{
+  "name" : "MPPDL",
+  "version" : "0.0.1",
+  "dependencies" : {
+    "express" : "*",
+    "socket.io" : "*",
+    "body-parser" : "*",
+    "ejs" : "*"
+  }
+}

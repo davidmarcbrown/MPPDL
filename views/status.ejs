@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Cheesepencil - Multiplayer Procedural Death Labyrinth</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory         -->
+        <link href='http://fonts.googleapis.com/css?family=Smythe' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/css/normalize.css">
+        <link rel="stylesheet" href="/css/status.css">
+        <script src="/js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.0.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <h2><a href="http://www.cheesepencil.com/">Cheesepencil</a> - Multiplayer Procedural Death Labyrinth Status</h2>
+        <p>Server launched: <%= serverLaunched %></p>
+        <p>Current server time: <%= serverTime %></p>
+        <p><a href="/">Create new dungeon</a><p>
+        <p><%= games.length %> currently populated dungeons</p>
+        <p><%= totalPlayerCount %> currently connected adventurers</p>
+        <p><%= stepsTaken %> steps taken since server launch</p>
+        <p><%= cumulativePlayersConnected %> named adventurers since server launch</p>
+        <p><%= gamesCreated %> dungeons created since server launch</p>
+        <ul>
+          <% for ( var i = 0; i < games.length; i++) { %>
+            <li>
+              <h3><a href="/dungeon/<%= games[i].gameName %>"><%= games[i].gameName %></a></h3>
+              <p><%= games[i].roster.length %> players, created <%= games[i].createdDate %></p>
+
+              <ul class='game'>
+                <% for ( var j = 0; j < games[i].roster.length; j++ ) { %>
+                  <li>
+                    <%= games[i].roster[j].playerName || games[i].roster[j].socket %>
+                    <ul>
+                      <li>class: <%= games[i].roster[j].playerClass %></li>
+                      <li>depth: <%= games[i].roster[j].level %></li>
+                    </ul>
+                  </li>
+                <% } %>
+              </ul>
+            </li>
+          <% } %>
+        </ul>
+    </body>
+</html>

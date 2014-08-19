@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Cheesepencil - Multiplayer Procedural Death Labyrinth</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory         -->
+        <link href='http://fonts.googleapis.com/css?family=Smythe' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/css/normalize.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <script src="/js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.0.js"></script>
+        <script src="/js/phaser.min.js"></script>
+        <script src="/js/responsiveGameDiv.js"></script>
+        <script src="/js/gameClient.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <h2>Multiplayer Procedural Death Labyrinth</h2>
+        <p>You, <span id='playerName'>brave adventurer</span>, descend into the cursed pit of <%=gameName%>.</p><hr/>
+        <div id="uiDiv">
+          <div id="gameDiv">
+            <div id="canvasDiv"></div>
+          </div>
+          <div id="controlsDiv">
+            <div class="controlRow">
+              <div id="NW" class="controlButton">NW</div>
+              <div id="N" class="controlButton">N</div>
+              <div id="NE" class="controlButton">NE</div>
+            </div>
+            <div class="controlRow">
+              <div id="W" class="controlButton">W</div>
+              <div class="controlButton dullButton">?</div>
+              <div id="E" class="controlButton">E</div>
+            </div>
+            <div class="controlRow">
+              <div id="SW" class="controlButton">SW</div>
+              <div id="S" class="controlButton">S</div>
+              <div id="SE" class="controlButton">SE</div>
+            </div>
+          </div>
+          <div id="actionDiv"></div>
+          <div id="classPicker">
+            <p>Choose your character:</p>
+            <div class="pickme" id="knight">Knight</div>
+            <div class="pickme" id="mage">Mage</div>
+            <div class="pickme" id="rogue">Rogue</div>
+          </div>
+          <div id="ping"></div>
+          <div id="loading">Establishing psychic connection with dungeon master...</div>
+          <div id="err">Something has gone terribly wrong.</div>
+        </div>
+        <hr/>
+        <p>by <a href="http://www.cheesepencil.com/">Cheesepencil</a></p>
+    </body>
+</html>
